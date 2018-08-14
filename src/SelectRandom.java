@@ -1,28 +1,16 @@
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.FlowLayout;
-import java.awt.Font;
-import java.awt.Toolkit;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import javax.swing.BoxLayout;
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.SwingConstants;
-import javax.swing.Timer;
+import javax.swing.*;
 
 class SelectRandomFrame {
 
@@ -57,33 +45,39 @@ class SelectRandomFrame {
         l1.setAlignmentX(Component.CENTER_ALIGNMENT);
         p1.add(l1);
 
-        JLabel l2=new JLabel("Click ..Start.. to start select Reandomly",SwingConstants.CENTER);
+        JLabel l2=new JLabel("أضغط زر أبدأ لبدء السحب",SwingConstants.CENTER);
         l2.setAlignmentX(Component.CENTER_ALIGNMENT);
-        l2.setFont(new Font("Times",Font.BOLD,20));
+        l2.setFont(new Font("Times",Font.BOLD,16));
         p1.add(l2);
 
+        p1.add(Box.createRigidArea(new Dimension(10, 10)));
 
-        startButton=new JButton("START");
+        startButton=new JButton("أبدأ");
         startButton.setAlignmentX(Component.CENTER_ALIGNMENT);
         p1.add(startButton);
 
+        p1.add(Box.createRigidArea(new Dimension(10, 10)));
 
-
-
-
-        JLabel l3=new JLabel("The winner is   ",SwingConstants.CENTER);
+        JLabel l3=new JLabel("الفائز هو   ",SwingConstants.CENTER);
         l3.setAlignmentX(Component.CENTER_ALIGNMENT);
-        l3.setFont(new Font("Times",Font.BOLD,20));
+        l3.setFont(new Font("Times",Font.BOLD,16));
         p1.add(l3);
+
+        p1.add(Box.createRigidArea(new Dimension(10, 10)));
 
         l4=new JLabel("",SwingConstants.CENTER);
         l4.setAlignmentX(Component.CENTER_ALIGNMENT);
-        l4.setFont(new Font("Times",Font.BOLD,18));
+        l4.setFont(new Font("Times",Font.BOLD,20));
         p1.add(l4);
+
+        p1.add(Box.createRigidArea(new Dimension(10, 10)));
+
         // Stop Button
-        stopButton = new JButton("STOP") ;
+        stopButton = new JButton("توقف") ;
         stopButton.setAlignmentX(Component.CENTER_ALIGNMENT);
         p1.add(stopButton);
+
+        p1.add(Box.createRigidArea(new Dimension(10, 10)));
 
         //the event for start and stop Buttons
         event e = new event();
@@ -159,7 +153,7 @@ class SelectRandomFrame {
                 shuffle(res); //shuffle array
                 int counter = res.size() ;
                 TimeClass tc = new TimeClass(counter);
-                timer = new Timer(100 , tc); //the time between each name
+                timer = new Timer(50 , tc); //the time between each name
                 timer.start();
                 isTimerStart = true ;
 
